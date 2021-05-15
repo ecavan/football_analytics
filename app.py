@@ -16,15 +16,11 @@ price = {'BTCUSDT': pd.DataFrame(columns=['date', 'price', 'volume','ma','vma'])
 def btc_pairs_trade(msg):
     if msg['e'] != 'error':
         price['BTCUSDT'].loc[len(price['BTCUSDT'])] = [pd.Timestamp.now(), float(msg['c']), float(msg['v']), '', '']
-    else:
-        price['error']:True
             
             
 def btc_pairs_trade2(msg):
     if msg['e'] != 'error':
         price['ETHUSDT'].loc[len(price['ETHUSDT'])] = [pd.Timestamp.now(), float(msg['c']), float(msg['v']), '', '']
-    else:
-        price['error']:True
 
 x = client.get_account()
 
@@ -50,7 +46,7 @@ def create_order():
     while len(price['ETHUSDT'])  == 0:
         sleep(0.1)
     
-    sleep(30)
+    sleep(15)
     
     x = client.get_account()
     
