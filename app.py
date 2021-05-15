@@ -5,8 +5,8 @@ from twisted.internet import reactor
 from time import sleep
 import pandas as pd
 
-api_key_demo = "uiJMwrpDuud1LY67DKFZTTGay3E3XenfyfQbcZEzdhmoOepFr1qZXzAytHmHZPQG"
-api_secret_demo = "YYWUY0fKv6DF9Qqmu1CPej4cJ7MOk4XX8Ms8RChEQlmQlJbgKqvFj5Oww0k0lWml"
+api_key_demo = "vFSxpUvEvV2JAknpqBtch1OV4Tfw5dOGcJW91qlIl2sLxHvbZ2JLOqJhB4HsMB4n"
+api_secret_demo = "5vEoKn0bu4LDpbtNuUFclEneuJibdxtX5PBGS6crzZESOF6KT3TQ7kf5imKLyKyo"
 
 client = Client(api_key_demo, api_secret_demo)
 client.API_URL = 'https://testnet.binance.vision/api'
@@ -46,7 +46,7 @@ def create_order():
     while len(price['ETHUSDT'])  == 0:
         sleep(0.1)
     
-    sleep(15)
+    sleep(20)
     
     x = client.get_account()
     
@@ -61,7 +61,7 @@ def create_order():
     
         df = price[stock]
 
-        df['ma'] = df['price'].ewm(halflife=10).mean()
+        #df['ma'] = df['price'].ewm(halflife=10).mean()
         df = df.sort_values('date', ascending = False)
         
         try:
