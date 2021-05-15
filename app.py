@@ -4,6 +4,7 @@ from binance.exceptions import BinanceAPIException, BinanceOrderException
 from twisted.internet import reactor
 from time import sleep
 import pandas as pd
+from flask import Flask, render_template
 
 api_key_demo = "vFSxpUvEvV2JAknpqBtch1OV4Tfw5dOGcJW91qlIl2sLxHvbZ2JLOqJhB4HsMB4n"
 api_secret_demo = "5vEoKn0bu4LDpbtNuUFclEneuJibdxtX5PBGS6crzZESOF6KT3TQ7kf5imKLyKyo"
@@ -16,11 +17,15 @@ price = {'BTCUSDT': pd.DataFrame(columns=['date', 'price', 'volume','ma','vma'])
 def btc_pairs_trade(msg):
     if msg['e'] != 'error':
         price['BTCUSDT'].loc[len(price['BTCUSDT'])] = [pd.Timestamp.now(), float(msg['c']), float(msg['v']), '', '']
+    else:
+        price['error'] =  True
             
             
 def btc_pairs_trade2(msg):
     if msg['e'] != 'error':
         price['ETHUSDT'].loc[len(price['ETHUSDT'])] = [pd.Timestamp.now(), float(msg['c']), float(msg['v']), '', '']
+    else:
+        price['error'] =  True
 
 x = client.get_account()
 
@@ -92,9 +97,6 @@ def create_order():
      )
     
     return p1
-
-
-from flask import Flask, render_template
 
 app = Flask(__name__)
 
