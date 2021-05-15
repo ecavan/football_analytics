@@ -27,74 +27,74 @@ def btc_pairs_trade2(msg):
     else:
         price['error'] = True
 
-x = client.get_account()
+# x = client.get_account()
 
-balance = float(x['balances'][6]['free'])
-btc = float(x['balances'][1]['free'])
-eth = float(x['balances'][3]['free'])
-value = balance + 4000*eth + 40000*btc
+# balance = float(x['balances'][6]['free'])
+# btc = float(x['balances'][1]['free'])
+# eth = float(x['balances'][3]['free'])
+# value = balance + 4000*eth + 40000*btc
 
-p1 = ('Initial Account Balance: ' + str(x['balances'][6]['free']) + "<br/>" 
-                        + 'Initial ETH Balance: ' + str(x['balances'][3]['free']) + "<br/>" 
-                        +  'Initial BTC Balance: ' + str(x['balances'][1]['free']) + "<br/>" 
-                          + 'Initial Approximate Portfolio value: ' + str(value)
-     )
+# p1 = ('Initial Account Balance: ' + str(x['balances'][6]['free']) + "<br/>" 
+#                         + 'Initial ETH Balance: ' + str(x['balances'][3]['free']) + "<br/>" 
+#                         +  'Initial BTC Balance: ' + str(x['balances'][1]['free']) + "<br/>" 
+#                           + 'Initial Approximate Portfolio value: ' + str(value)
+#      )
 
 
 def create_order():
     
-    # bsm = BinanceSocketManager(client)
-    # conn_key = bsm.start_symbol_ticker_socket('ETHUSDT', btc_pairs_trade2)
-    # conn_key2 = bsm.start_symbol_ticker_socket('BTCUSDT', btc_pairs_trade)
-    # bsm.start()
+    bsm = BinanceSocketManager(client)
+    conn_key = bsm.start_symbol_ticker_socket('ETHUSDT', btc_pairs_trade2)
+    conn_key2 = bsm.start_symbol_ticker_socket('BTCUSDT', btc_pairs_trade)
+    bsm.start()
     
-    # while len(price['ETHUSDT'])  == 0:
-    #     sleep(0.1)
+    while len(price['ETHUSDT'])  == 0:
+        sleep(0.1)
     
-    # sleep(20)
+    sleep(20)
     
-    # x = client.get_account()
+    x = client.get_account()
     
-    # balance = float(x['balances'][6]['free'])
-    # btc = float(x['balances'][1]['free'])
-    # eth = float(x['balances'][3]['free'])
-    # value = balance + 4000*eth + 40000*btc
+    balance = float(x['balances'][6]['free'])
+    btc = float(x['balances'][1]['free'])
+    eth = float(x['balances'][3]['free'])
+    value = balance + 4000*eth + 40000*btc
     
-    # stocks = ['ETHUSDT','BTCUSDT' ]
+    stocks = ['ETHUSDT','BTCUSDT' ]
     
-    # for stock in stocks:
+    for stock in stocks:
     
-    #     df = price[stock]
+        df = price[stock]
 
-    #     #df['ma'] = df['price'].ewm(halflife=10).mean()
-    #     df = df.sort_values('date', ascending = False)
+        #df['ma'] = df['price'].ewm(halflife=10).mean()
+        df = df.sort_values('date', ascending = False)
         
-        # try:
-        #     if df.price.iloc[0] >100:
-        #         order = client.order_market_sell(symbol=stock, quantity=0.01)
+        try:
+            if df.price.iloc[0] >100:
+                order = client.order_market_sell(symbol=stock, quantity=0.01)
 
-        #     elif df.price.iloc[0] < 100:
-        #         order = client.order_market_buy(symbol=stock, quantity=0.01)
+            elif df.price.iloc[0] < 100:
+                order = client.order_market_buy(symbol=stock, quantity=0.01)
 
-        #     sleep(0.1)
+            sleep(0.1)
             
-        # except:
-        #     return 'Error'
+        except:
+            return 'Error'
     
-    # y = client.get_account()
-    # balance_final = float(y['balances'][6]['free'])
-    # btc_final = float(y['balances'][1]['free'])
-    # eth_final = float(y['balances'][3]['free'])
-    # value_final = balance_final + 4000*eth_final + 40000*btc_final
-    # change_final = 100*((value_final - value)/value)
+    y = client.get_account()
+    balance_final = float(y['balances'][6]['free'])
+    btc_final = float(y['balances'][1]['free'])
+    eth_final = float(y['balances'][3]['free'])
+    value_final = balance_final + 4000*eth_final + 40000*btc_final
+    change_final = 100*((value_final - value)/value)
     
-    # p1 = ('Initial Approximate Portfolio value: ' + str(value) + "<br/>"  + "<br/>" + 
-    #       'Difference Account Balance: ' + str(float(y['balances'][6]['free']) - float(x['balances'][6]['free'])) + "<br/>" 
-    #                     + 'Difference ETH Balance: ' + str(float(y['balances'][3]['free']) - float(x['balances'][3]['free'])) + "<br/>" 
-    #                         +  'Difference BTC Balance: ' + str(float(y['balances'][1]['free']) - float(x['balances'][1]['free'])) + "<br/>" 
-    #                           + '% Difference Portfolio Value: ' + str(change_final) +'%' + "<br/>"  + "<br/>" +
-    #                              + 'Final Approximate Portfolio Value: ' + str(value_final)
-    #  )
+    p1 = ('Initial Approximate Portfolio value: ' + str(value) + "<br/>"  + "<br/>" + 
+          'Difference Account Balance: ' + str(float(y['balances'][6]['free']) - float(x['balances'][6]['free'])) + "<br/>" 
+                        + 'Difference ETH Balance: ' + str(float(y['balances'][3]['free']) - float(x['balances'][3]['free'])) + "<br/>" 
+                            +  'Difference BTC Balance: ' + str(float(y['balances'][1]['free']) - float(x['balances'][1]['free'])) + "<br/>" 
+                              + '% Difference Portfolio Value: ' + str(change_final) +'%' + "<br/>"  + "<br/>" +
+                                 + 'Final Approximate Portfolio Value: ' + str(value_final)
+     )
 
     
     return 'ok'
@@ -109,7 +109,7 @@ def index():
 @app.route('/my-link/')
 def my_link():
 
-  return p1
+  return 'ok'
 
 @app.route('/my-link2/')
 def my_link2():
