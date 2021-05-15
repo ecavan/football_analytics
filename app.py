@@ -41,63 +41,34 @@ p1 = ('Initial Account Balance: ' + str(x['balances'][6]['free']) + "<br/>"
      )
 
 
-def create_order():
-    
-    bsm = BinanceSocketManager(client)
-    conn_key = bsm.start_symbol_ticker_socket('ETHUSDT', btc_pairs_trade2)
-    conn_key2 = bsm.start_symbol_ticker_socket('BTCUSDT', btc_pairs_trade)
-    bsm.start()
-    
-    while len(price['ETHUSDT'])  == 0:
-        sleep(0.1)
-    
-    sleep(20)
-    
-    x = client.get_account()
-    
-    balance = float(x['balances'][6]['free'])
-    btc = float(x['balances'][1]['free'])
-    eth = float(x['balances'][3]['free'])
-    value = balance + 4000*eth + 40000*btc
-    
-    stocks = ['ETHUSDT','BTCUSDT' ]
-    
-    for stock in stocks:
-    
-        df = price[stock]
+bsm = BinanceSocketManager(client)
+conn_key = bsm.start_symbol_ticker_socket('ETHUSDT', btc_pairs_trade2)
+conn_key2 = bsm.start_symbol_ticker_socket('BTCUSDT', btc_pairs_trade)
+bsm.start()
 
-        #df['ma'] = df['price'].ewm(halflife=10).mean()
-        df = df.sort_values('date', ascending = False)
-        
-        try:
-            if df.price.iloc[0] >df.price.iloc[1]:
-                order = client.order_market_sell(symbol=stock, quantity=0.1)
+while len(price['ETHUSDT'])  == 0:
+    sleep(0.1)
 
-            elif df.price.iloc[0] < df.price.iloc[1]:
-                order = client.order_market_buy(symbol=stock, quantity=0.1)
+sleep(30)
+    
+df = price['ETHUSDT']
 
-            sleep(0.1)
-            
-        except:
-            return 'Error'
-    
-    y = client.get_account()
-    balance_final = float(y['balances'][6]['free'])
-    btc_final = float(y['balances'][1]['free'])
-    eth_final = float(y['balances'][3]['free'])
-    value_final = balance_final + 4000*eth_final + 40000*btc_final
-    change_final = 100*((value_final - value)/value)
-    
-    p1 = ('Initial Approximate Portfolio value: ' + str(value) + "<br/>"  + "<br/>" + 
-          'Difference Account Balance: ' + str(float(y['balances'][6]['free']) - float(x['balances'][6]['free'])) + "<br/>" 
-                        + 'Difference ETH Balance: ' + str(float(y['balances'][3]['free']) - float(x['balances'][3]['free'])) + "<br/>" 
-                            +  'Difference BTC Balance: ' + str(float(y['balances'][1]['free']) - float(x['balances'][1]['free'])) + "<br/>" 
-                              + '% Difference Portfolio Value: ' + str(change_final) +'%' + "<br/>"  + "<br/>" +
-                                 + 'Final Approximate Portfolio Value: ' + str(value_final)
-     )
 
+df = df.sort_values('date', ascending = False)
+
+if (df.price.iloc[0] > df.price.iloc[1]):
+    order = client.order_market_sell(symbol='ETHUSDT', quantity=0.1)
+
+elif (df.price.iloc[0] <= df.price.iloc[1]):
+    order = client.order_market_buy(symbol='ETHUSDT', quantity=0.1)
     
-    return p1
+    
+y = client.get_account()
+balance_final = float(y['balances'][6]['free'])
+btc_final = float(y['balances'][1]['free'])
+eth_final = float(y['balances'][3]['free'])
+value_final = balance_final + 4000*eth_final + 40000*btc_final
+change_final = 100*((value_final - value)/value)
 
 app = Flask(__name__)
 
@@ -114,9 +85,9 @@ def my_link():
 @app.route('/my-link2/')
 def my_link2():
 
-  return create_order()
+  return str(change_final)
 
 if __name__ == '__main__':
-  app.run(debug=True, use_reloader=False)
+  app.run(debug=True)
   #create_order()
   
