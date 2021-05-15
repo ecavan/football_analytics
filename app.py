@@ -40,38 +40,6 @@ p1 = ('Initial Account Balance: ' + str(x['balances'][6]['free']) + "<br/>"
                           + 'Initial Approximate Portfolio value: ' + str(value)
      )
 
-
-bsm = BinanceSocketManager(client)
-conn_key = bsm.start_symbol_ticker_socket('ETHUSDT', btc_pairs_trade2)
-conn_key2 = bsm.start_symbol_ticker_socket('BTCUSDT', btc_pairs_trade)
-bsm.start()
-
-while len(price['ETHUSDT'])  == 0:
-    sleep(0.1)
-
-sleep(30)
-    
-df = price['ETHUSDT']
-
-
-df = df.sort_values('date', ascending = False)
-
-if (df.price.iloc[0] > df.price.iloc[1]):
-    order = client.order_market_sell(symbol='ETHUSDT', quantity=1)
-
-elif (df.price.iloc[0] <= df.price.iloc[1]):
-    order = client.order_market_buy(symbol='ETHUSDT', quantity=1)
-    
-    
-y = client.get_account()
-balance_final = float(y['balances'][6]['free'])
-btc_final = float(y['balances'][1]['free'])
-eth_final = float(y['balances'][3]['free'])
-value_final = balance_final + 4000*eth_final + 40000*btc_final
-change_final = 100*((value_final - value)/value)
-
-reactor.stop()
-
 app = Flask(__name__)
 
 
@@ -84,10 +52,10 @@ def my_link():
 
   return p1
 
-@app.route('/my-link2/')
-def my_link2():
+# @app.route('/my-link2/')
+# def my_link2():
 
-  return str(change_final)
+#   return str(change_final)
 
 if __name__ == '__main__':
   app.run(debug=True, use_reloader=False)
