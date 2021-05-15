@@ -1,5 +1,5 @@
 Flask==1.0.2
 Pillow==8.2.0
 Gunicorn>=19.9.0
-pandas=1.2.4
+pandas==1.2.4
 python-binance==0.7.3 
