@@ -69,17 +69,17 @@ def create_order():
         #df['ma'] = df['price'].ewm(halflife=10).mean()
         df = df.sort_values('date', ascending = False)
         
-        try:
-            if df.price.iloc[0] >100:
-                order = client.order_market_sell(symbol=stock, quantity=0.01)
+        # try:
+        #     if df.price.iloc[0] >100:
+        #         order = client.order_market_sell(symbol=stock, quantity=0.01)
 
-            elif df.price.iloc[0] < 100:
-                order = client.order_market_buy(symbol=stock, quantity=0.01)
+        #     elif df.price.iloc[0] < 100:
+        #         order = client.order_market_buy(symbol=stock, quantity=0.01)
 
-            sleep(0.1)
+        #     sleep(0.1)
             
-        except:
-            return 'Error'
+        # except:
+        #     return 'Error'
     
     y = client.get_account()
     balance_final = float(y['balances'][6]['free'])
