@@ -19,18 +19,18 @@ def btc_pairs_trade2(msg):
     if msg['e'] != 'error':
         price['ETHUSDT'].loc[len(price['ETHUSDT'])] = [pd.Timestamp.now(), float(msg['c']), float(msg['v']), '', '']
 
-x = client.get_account()
+# x = client.get_account()
 
-balance = float(x['balances'][6]['free'])
-btc = float(x['balances'][1]['free'])
-eth = float(x['balances'][3]['free'])
-value = balance + 4000*eth + 40000*btc
+# balance = float(x['balances'][6]['free'])
+# btc = float(x['balances'][1]['free'])
+# eth = float(x['balances'][3]['free'])
+# value = balance + 4000*eth + 40000*btc
 
-p1 = ('Initial Account Balance: ' + str(x['balances'][6]['free']) + "<br/>" 
-                        + 'Initial ETH Balance: ' + str(x['balances'][3]['free']) + "<br/>" 
-                        +  'Initial BTC Balance: ' + str(x['balances'][1]['free']) + "<br/>" 
-                          + 'Initial Approximate Portfolio value: ' + str(value)
-     )
+# p1 = ('Initial Account Balance: ' + str(x['balances'][6]['free']) + "<br/>" 
+#                         + 'Initial ETH Balance: ' + str(x['balances'][3]['free']) + "<br/>" 
+#                         +  'Initial BTC Balance: ' + str(x['balances'][1]['free']) + "<br/>" 
+#                           + 'Initial Approximate Portfolio value: ' + str(value)
+#      )
 
 
 bsm = BinanceSocketManager(client)
@@ -57,7 +57,7 @@ def index():
 @app.route('/my-link/')
 def my_link():
 
-  return p1
+  return 'ok'
 
 @app.route('/my-link2/')
 def my_link2():
