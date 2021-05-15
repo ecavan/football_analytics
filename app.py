@@ -53,16 +53,6 @@ if (df.price.iloc[0] > df.price.iloc[1]):
 elif (df.price.iloc[0] <= df.price.iloc[1]):
     order = client.order_market_buy(symbol='ETHUSDT', quantity=1)
     
-    
-y = client.get_account()
-balance_final = float(y['balances'][6]['free'])
-btc_final = float(y['balances'][1]['free'])
-eth_final = float(y['balances'][3]['free'])
-value_final = balance_final + 4000*eth_final + 40000*btc_final
-change_final = 100*((value_final - value)/value)
-
-reactor.stop()
-
 app = Flask(__name__)
 
 
@@ -78,7 +68,7 @@ def my_link():
 @app.route('/my-link2/')
 def my_link2():
 
-  return str(change_final)
+  return 'ok'
 
 if __name__ == '__main__':
   app.run(debug=True, use_reloader=False)
