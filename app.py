@@ -95,6 +95,8 @@ def create_order():
                               + '% Difference Portfolio Value: ' + str(change_final) +'%' + "<br/>"  + "<br/>" +
                                  + 'Final Approximate Portfolio Value: ' + str(value_final)
      )
+
+    reactor.stop()
     
     return p1
 
