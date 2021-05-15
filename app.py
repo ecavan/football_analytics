@@ -46,12 +46,6 @@ df = price['ETHUSDT']
 
 
 df = df.sort_values('date', ascending = False)
-
-if (df.price.iloc[0] > df.price.iloc[1]):
-    order = client.order_market_sell(symbol='ETHUSDT', quantity=1)
-
-elif (df.price.iloc[0] <= df.price.iloc[1]):
-    order = client.order_market_buy(symbol='ETHUSDT', quantity=1)
     
 app = Flask(__name__)
 
@@ -68,7 +62,7 @@ def my_link():
 @app.route('/my-link2/')
 def my_link2():
 
-  return 'ok'
+  return str(df.price.iloc[0])
 
 if __name__ == '__main__':
   app.run(debug=True, use_reloader=False)
