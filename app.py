@@ -117,6 +117,6 @@ def my_link2():
   return create_order()
 
 if __name__ == '__main__':
-  app.run(debug=False)
+  app.run(debug=True, use_reloader=False)
   #create_order()
   
