@@ -70,10 +70,10 @@ def create_order():
         df = df.sort_values('date', ascending = False)
         
         try:
-            if df.price.iloc[0] >100:
+            if df.price.iloc[0] >df.price.iloc[1]:
                 order = client.order_market_sell(symbol=stock, quantity=0.1)
 
-            elif df.price.iloc[0] < 100:
+            elif df.price.iloc[0] < df.price.iloc[1]:
                 order = client.order_market_buy(symbol=stock, quantity=0.1)
 
             sleep(0.1)
@@ -97,7 +97,7 @@ def create_order():
      )
 
     
-    return 'ok'
+    return p1
 
 app = Flask(__name__)
 
