@@ -18,14 +18,14 @@ def btc_pairs_trade(msg):
     if msg['e'] != 'error':
         price['BTCUSDT'].loc[len(price['BTCUSDT'])] = [pd.Timestamp.now(), float(msg['c']), float(msg['v']), '', '']
     else:
-        price['error'] =  True
+        price['error'] =  msg['e'] 
             
             
 def btc_pairs_trade2(msg):
     if msg['e'] != 'error':
         price['ETHUSDT'].loc[len(price['ETHUSDT'])] = [pd.Timestamp.now(), float(msg['c']), float(msg['v']), '', '']
     else:
-        price['error'] =  True
+        price['error'] = msg['e']
 
 x = client.get_account()
 
@@ -79,7 +79,7 @@ def create_order():
             sleep(0.1)
             
         except:
-            return 'An Error Occured...'
+            return price['error']
     
     y = client.get_account()
     balance_final = float(y['balances'][6]['free'])
@@ -116,4 +116,6 @@ def my_link2():
   return create_order()
 
 if __name__ == '__main__':
-  app.run(debug=True, use_reloader=False)
+  #app.run(debug=True, use_reloader=False)
+  create_order()
+  
