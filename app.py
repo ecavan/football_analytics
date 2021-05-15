@@ -57,10 +57,10 @@ df = price['ETHUSDT']
 df = df.sort_values('date', ascending = False)
 
 if (df.price.iloc[0] > df.price.iloc[1]):
-    order = client.order_market_sell(symbol='ETHUSDT', quantity=0.1)
+    order = client.order_market_sell(symbol='ETHUSDT', quantity=1)
 
 elif (df.price.iloc[0] <= df.price.iloc[1]):
-    order = client.order_market_buy(symbol='ETHUSDT', quantity=0.1)
+    order = client.order_market_buy(symbol='ETHUSDT', quantity=1)
     
     
 y = client.get_account()
@@ -69,6 +69,8 @@ btc_final = float(y['balances'][1]['free'])
 eth_final = float(y['balances'][3]['free'])
 value_final = balance_final + 4000*eth_final + 40000*btc_final
 change_final = 100*((value_final - value)/value)
+
+reactor.stop()
 
 app = Flask(__name__)
 
