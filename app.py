@@ -71,10 +71,10 @@ def create_order():
         
         try:
             if df.price.iloc[0] >100:
-                order = client.order_market_sell(symbol=stock, quantity=0.01)
+                order = client.order_market_sell(symbol=stock, quantity=0.1)
 
             elif df.price.iloc[0] < 100:
-                order = client.order_market_buy(symbol=stock, quantity=0.01)
+                order = client.order_market_buy(symbol=stock, quantity=0.1)
 
             sleep(0.1)
             
