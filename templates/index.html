@@ -1,20 +1,33 @@
 <!doctype html>
 
 
-<head><title>Trading Algorithm Bot</title> 
+<head><title>Football Analytics</title> 
     <meta charset=utf-8> </head>
     <body>
-        <h1>Test my Trading Algorithm</h1>
-        <p>The algorithm trades crypto currencies on Binance</p>
-        <p>** Note: The Algorithm takes some time to load **</p>
-        <p>If an error occurs: go back to the homepage, refresh the page and reclick the run algo button</p>
+        <h1>Football Analytics: By Elijah Cavan</h1>
+        <p>Linkedin: https://www.linkedin.com/in/elijah-cavan-msc-14b0bab1/ <br/>  </p>
+        <p>Website: https://elicavan.wixsite.com/site <br/>  </p>
         
-        <form action="/my-link/">
-            <input type="submit" value="See Account Balance" />
+        <p>I've created this web app so you can explore some of the work I've done with football statistics. <br/>  <br/> See more by checking out: Medium: https://ecavan.medium.com/ and Kaggle: https://www.kaggle.com/sportsstatseli.<br/>  </p>
+        
+        <h1>Input a Team Name</h1>
+        
+        <p>The index '0' corresponds to the 2019 stats, whereas the '1' index refers to stats from 2020. <br/> My custom stat is the 'Missed stops' statistic - which weights each stat accordingly to give an indication <br/> of how often a defense can 'get off the field'.Teams with low Missed Stop % tend to have strong defenses. <br/> </p>
+
+        <form action = 'd' method="POST">
+            <input name="text">
+            <input type="submit">
+
         </form>
         
-        <form action="/my-link2/">
-            <input type="submit" value="Run Algorithm" />
+        <h1>Input a QB Full Name</h1>
+        
+                <p>The index '0' corresponds to the 2019 stats, whereas the '1' index refers to stats from 2020. <br/> My custom stat is the 'Efficient Yards' statistic - which weights each stat accordingly to give an indication <br/> of how efficient a QB is- an adjustment over the Yards per Att metric. QBs with high Effiecent Yards over Average tend to be the Star QBs <br/> </p>
+
+        
+        <form action = 'q' method="POST">
+            <input name="qb">
+            <input type="submit">
         </form>
 
     </body>
