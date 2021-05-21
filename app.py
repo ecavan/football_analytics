@@ -70,8 +70,8 @@ def my_form_post2():
 def my_form_post3():
     text = request.form['ball']
     processed_text = text.lower()
-    return jsonify(pd.read_csv(bich.csv))
+    return jsonify(pd.read_csv('bich.csv'))
 
 
 if __name__ == '__main__':
-  app.run(debug=True, use_reloader=False)
+    app.run(debug=True, use_reloader=False)
