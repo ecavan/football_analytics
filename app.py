@@ -1,7 +1,6 @@
 import pandas as pd
 from flask import jsonify
 from flask import Flask, request, render_template
-import statsapi
 
 df20_O = pd.read_csv('2020O.csv')
 df20_D = pd.read_csv('2020D.csv')
