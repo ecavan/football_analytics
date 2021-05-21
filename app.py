@@ -67,7 +67,7 @@ def my_form_post2():
     return jsonify(df2[df2.Player == processed_text].to_dict(orient='records'))
 
 
-df3 = pd.read_csv('bjplayers.csv')
+df3 = pd.read_csv('bjplayers2.csv')
 
 @app.route('/b', methods=['POST', 'Get'])
 def my_form_post3():
