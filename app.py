@@ -71,7 +71,7 @@ def my_form_post2():
 def my_form_post3():
     text = request.form['ball']
     processed_text = text.lower()
-    return statsapi.lookup_team('tor')
+    return jsonify(pd.read_csv(bich.csv))
 
 
 if __name__ == '__main__':
