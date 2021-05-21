@@ -67,13 +67,13 @@ def my_form_post2():
     return jsonify(df2[df2.Player == processed_text].to_dict(orient='records'))
 
 
-df = pd.read_csv('bich.csv')
+df3 = pd.read_csv('bjplayers.csv')
 
 @app.route('/b', methods=['POST', 'Get'])
 def my_form_post3():
     text = request.form['ball']
     processed_text = text.lower()
-    return jsonify(df.to_dict(orient='records'))
+    return jsonify(df3[df3.Name == processed_text].to_dict(orient='records'))
 
 
 if __name__ == '__main__':
