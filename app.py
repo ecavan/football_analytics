@@ -1,6 +1,7 @@
 import pandas as pd
 from flask import jsonify
 from flask import Flask, request, render_template
+import statsapi
 
 df20_O = pd.read_csv('2020O.csv')
 df20_D = pd.read_csv('2020D.csv')
@@ -65,6 +66,12 @@ def my_form_post2():
     text = request.form['qb']
     processed_text = text.lower()
     return jsonify(df2[df2.Player == processed_text].to_dict(orient='records'))
+
+@app.route('/b', methods=['POST', 'Get'])
+def my_form_post3():
+    text = request.form['ball']
+    processed_text = text.lower()
+    return statsapi.lookup_team('tor')
 
 
 if __name__ == '__main__':
