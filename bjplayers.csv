@@ -1,0 +1,225 @@
+,Statistic,Value,Name
+0,gamesPlayed,42,Bichette
+1,groundOuts,43,Bichette
+2,airOuts,31,Bichette
+3,runs,36,Bichette
+4,doubles,12,Bichette
+5,triples,0,Bichette
+6,homeRuns,9,Bichette
+7,strikeOuts,50,Bichette
+8,baseOnBalls,11,Bichette
+9,intentionalWalks,0,Bichette
+10,hits,49,Bichette
+11,hitByPitch,2,Bichette
+12,avg,.285,Bichette
+13,atBats,172,Bichette
+14,obp,.333,Bichette
+15,slg,.512,Bichette
+16,ops,.845,Bichette
+17,caughtStealing,0,Bichette
+18,stolenBases,7,Bichette
+19,stolenBasePercentage,1.000,Bichette
+20,groundIntoDoublePlay,6,Bichette
+21,numberOfPitches,718,Bichette
+22,plateAppearances,186,Bichette
+23,totalBases,88,Bichette
+24,rbi,27,Bichette
+25,leftOnBase,62,Bichette
+26,sacBunts,0,Bichette
+27,sacFlies,1,Bichette
+28,babip,.351,Bichette
+29,groundOutsToAirouts,1.39,Bichette
+30,atBatsPerHomeRun,19.11,Bichette
+31,runs_per_game,0.8571428571428571,Bichette
+0,gamesPlayed,42,Guerrero Jr.
+1,groundOuts,45,Guerrero Jr.
+2,airOuts,30,Guerrero Jr.
+3,runs,32,Guerrero Jr.
+4,doubles,10,Guerrero Jr.
+5,triples,0,Guerrero Jr.
+6,homeRuns,11,Guerrero Jr.
+7,strikeOuts,27,Guerrero Jr.
+8,baseOnBalls,27,Guerrero Jr.
+9,intentionalWalks,3,Guerrero Jr.
+10,hits,50,Guerrero Jr.
+11,hitByPitch,3,Guerrero Jr.
+12,avg,.329,Guerrero Jr.
+13,atBats,152,Guerrero Jr.
+14,obp,.440,Guerrero Jr.
+15,slg,.612,Guerrero Jr.
+16,ops,1.051,Guerrero Jr.
+17,caughtStealing,0,Guerrero Jr.
+18,stolenBases,1,Guerrero Jr.
+19,stolenBasePercentage,1.000,Guerrero Jr.
+20,groundIntoDoublePlay,4,Guerrero Jr.
+21,numberOfPitches,701,Guerrero Jr.
+22,plateAppearances,182,Guerrero Jr.
+23,totalBases,93,Guerrero Jr.
+24,rbi,32,Guerrero Jr.
+25,leftOnBase,51,Guerrero Jr.
+26,sacBunts,0,Guerrero Jr.
+27,sacFlies,0,Guerrero Jr.
+28,babip,.342,Guerrero Jr.
+29,groundOutsToAirouts,1.50,Guerrero Jr.
+30,atBatsPerHomeRun,13.82,Guerrero Jr.
+31,runs_per_game,0.7619047619047619,Guerrero Jr.
+0,gamesPlayed,26,Hernandez
+1,groundOuts,18,Hernandez
+2,airOuts,29,Hernandez
+3,runs,14,Hernandez
+4,doubles,3,Hernandez
+5,triples,0,Hernandez
+6,homeRuns,5,Hernandez
+7,strikeOuts,24,Hernandez
+8,baseOnBalls,10,Hernandez
+9,intentionalWalks,0,Hernandez
+10,hits,31,Hernandez
+11,hitByPitch,0,Hernandez
+12,avg,.304,Hernandez
+13,atBats,102,Hernandez
+14,obp,.366,Hernandez
+15,slg,.480,Hernandez
+16,ops,.846,Hernandez
+17,caughtStealing,1,Hernandez
+18,stolenBases,2,Hernandez
+19,stolenBasePercentage,.667,Hernandez
+20,groundIntoDoublePlay,0,Hernandez
+21,numberOfPitches,408,Hernandez
+22,plateAppearances,112,Hernandez
+23,totalBases,49,Hernandez
+24,rbi,20,Hernandez
+25,leftOnBase,40,Hernandez
+26,sacBunts,0,Hernandez
+27,sacFlies,0,Hernandez
+28,babip,.356,Hernandez
+29,groundOutsToAirouts,0.62,Hernandez
+30,atBatsPerHomeRun,20.40,Hernandez
+31,runs_per_game,0.5384615384615384,Hernandez
+0,gamesPlayed,42,Semien
+1,groundOuts,25,Semien
+2,airOuts,50,Semien
+3,runs,27,Semien
+4,doubles,8,Semien
+5,triples,0,Semien
+6,homeRuns,10,Semien
+7,strikeOuts,47,Semien
+8,baseOnBalls,18,Semien
+9,intentionalWalks,0,Semien
+10,hits,47,Semien
+11,hitByPitch,0,Semien
+12,avg,.280,Semien
+13,atBats,168,Semien
+14,obp,.348,Semien
+15,slg,.506,Semien
+16,ops,.854,Semien
+17,caughtStealing,0,Semien
+18,stolenBases,7,Semien
+19,stolenBasePercentage,1.000,Semien
+20,groundIntoDoublePlay,1,Semien
+21,numberOfPitches,802,Semien
+22,plateAppearances,187,Semien
+23,totalBases,85,Semien
+24,rbi,26,Semien
+25,leftOnBase,61,Semien
+26,sacBunts,0,Semien
+27,sacFlies,1,Semien
+28,babip,.330,Semien
+29,groundOutsToAirouts,0.50,Semien
+30,atBatsPerHomeRun,16.80,Semien
+31,runs_per_game,0.6428571428571429,Semien
+0,gamesPlayed,4,Springer
+1,groundOuts,4,Springer
+2,airOuts,4,Springer
+3,runs,3,Springer
+4,doubles,0,Springer
+5,triples,0,Springer
+6,homeRuns,2,Springer
+7,strikeOuts,4,Springer
+8,baseOnBalls,2,Springer
+9,intentionalWalks,0,Springer
+10,hits,3,Springer
+11,hitByPitch,0,Springer
+12,avg,.200,Springer
+13,atBats,15,Springer
+14,obp,.294,Springer
+15,slg,.600,Springer
+16,ops,.894,Springer
+17,caughtStealing,0,Springer
+18,stolenBases,1,Springer
+19,stolenBasePercentage,1.000,Springer
+20,groundIntoDoublePlay,0,Springer
+21,numberOfPitches,75,Springer
+22,plateAppearances,18,Springer
+23,totalBases,9,Springer
+24,rbi,3,Springer
+25,leftOnBase,8,Springer
+26,sacBunts,0,Springer
+27,sacFlies,0,Springer
+28,babip,.111,Springer
+29,groundOutsToAirouts,1.00,Springer
+30,atBatsPerHomeRun,7.50,Springer
+31,runs_per_game,0.75,Springer
+0,gamesPlayed,38,Biggio
+1,groundOuts,25,Biggio
+2,airOuts,30,Biggio
+3,runs,14,Biggio
+4,doubles,3,Biggio
+5,triples,1,Biggio
+6,homeRuns,3,Biggio
+7,strikeOuts,47,Biggio
+8,baseOnBalls,20,Biggio
+9,intentionalWalks,1,Biggio
+10,hits,26,Biggio
+11,hitByPitch,1,Biggio
+12,avg,.206,Biggio
+13,atBats,126,Biggio
+14,obp,.318,Biggio
+15,slg,.317,Biggio
+16,ops,.635,Biggio
+17,caughtStealing,1,Biggio
+18,stolenBases,2,Biggio
+19,stolenBasePercentage,.667,Biggio
+20,groundIntoDoublePlay,2,Biggio
+21,numberOfPitches,594,Biggio
+22,plateAppearances,150,Biggio
+23,totalBases,40,Biggio
+24,rbi,11,Biggio
+25,leftOnBase,47,Biggio
+26,sacBunts,1,Biggio
+27,sacFlies,1,Biggio
+28,babip,.299,Biggio
+29,groundOutsToAirouts,0.83,Biggio
+30,atBatsPerHomeRun,42.00,Biggio
+31,runs_per_game,0.3684210526315789,Biggio
+0,gamesPlayed,42,Grichuk
+1,groundOuts,36,Grichuk
+2,airOuts,48,Grichuk
+3,runs,19,Grichuk
+4,doubles,10,Grichuk
+5,triples,0,Grichuk
+6,homeRuns,7,Grichuk
+7,strikeOuts,30,Grichuk
+8,baseOnBalls,8,Grichuk
+9,intentionalWalks,0,Grichuk
+10,hits,44,Grichuk
+11,hitByPitch,1,Grichuk
+12,avg,.280,Grichuk
+13,atBats,157,Grichuk
+14,obp,.317,Grichuk
+15,slg,.478,Grichuk
+16,ops,.795,Grichuk
+17,caughtStealing,2,Grichuk
+18,stolenBases,0,Grichuk
+19,stolenBasePercentage,.000,Grichuk
+20,groundIntoDoublePlay,5,Grichuk
+21,numberOfPitches,552,Grichuk
+22,plateAppearances,167,Grichuk
+23,totalBases,75,Grichuk
+24,rbi,34,Grichuk
+25,leftOnBase,69,Grichuk
+26,sacBunts,0,Grichuk
+27,sacFlies,1,Grichuk
+28,babip,.306,Grichuk
+29,groundOutsToAirouts,0.75,Grichuk
+30,atBatsPerHomeRun,22.43,Grichuk
+31,runs_per_game,0.4523809523809524,Grichuk
