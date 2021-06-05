@@ -47,6 +47,21 @@ df2['Player'] = df2['Player'].str.replace('*', '')
 df2['Player'] = df2['Player'].str.replace('+', '')
 df2['Player'] = df2['Player'].str.lower()
 df2.columns = ['Player', 'Cmp%', 'Pass Att', 'Int', 'Sacks', 'First Downs', 'Yds', 'QB Rating', 'Efficient Yards', 'Efficient Yards over Average']
+
+def get_adjusted_ppg(p):
+    
+    if (p > 20) & (p < 30):
+        return (p - 20)*1.15 + 20
+    elif (p > 30) & (p < 40):
+        return (10)*1.15 + (p-30)*1.35 + 20
+    elif (p > 40) & (p < 50):
+        return (10)*1.15 + (10)*1.35 + (p-40)*1.5 + 20
+    elif (p > 50) & (p < 60):
+        return (10)*1.15 + (10)*1.35 + 10*1.5 + (p-50)*1.65 + 20
+    elif p > 60:
+        return (10)*1.15 + (10)*1.35 + 10*1.5 + (p-50)*1.65 + (p-60)*1.75 + 20
+    else:
+        return p
     
 app = Flask(__name__)
 
@@ -74,6 +89,12 @@ def my_form_post3():
     text = request.form['ball']
     processed_text = text.lower()
     return jsonify(df3[df3.Name == processed_text].to_dict(orient='records'))
+
+@app.route('/c', methods=['POST', 'Get'])
+def my_form_post3():
+    num = request.form['bball']
+    dict_points = {'Points': num, 'Adjusted points': get_adjusted_ppg(num)}
+    return jsonify(dict_points)
 
 
 if __name__ == '__main__':
