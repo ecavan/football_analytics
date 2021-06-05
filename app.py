@@ -91,9 +91,9 @@ def my_form_post3():
     return jsonify(df3[df3.Name == processed_text].to_dict(orient='records'))
 
 @app.route('/c', methods=['POST', 'Get'])
-def my_form_post3():
+def my_form_post4():
     num = request.form['bball']
-    dict_points = {'Points': num, 'Adjusted points': get_adjusted_ppg(num)}
+    dict_points = {'Points': num, 'Adjusted points': get_adjusted_ppg(float(num))}
     return jsonify(dict_points)
 
 
